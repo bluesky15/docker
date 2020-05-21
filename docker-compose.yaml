@@ -20,8 +20,9 @@ services:
   mysql:
     container_name: mysql
     volumes:
-      - ./mysql/data:/var/lib/mysql
-      - ./mysql/my.cnf:/etc/mysql/my.cnf
+        - ./mysql/data:/var/lib/mysql
+        - ./mysql/mariadb/my.cnf:/etc/mysql/conf.d/settings.cnf
+        - ./mysql/mariadb/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     ports:
       - 3306:3306
     image: mariadb:10.5.3-bionic
