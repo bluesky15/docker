@@ -23,7 +23,7 @@ services:
       - ./mysql/data:/var/lib/mysql
       - ./mysql/my.cnf:/etc/mysql/my.cnf
     ports:
-      - 8080:8080
+      - 3306:3306
     image: mariadb:10.5.3-bionic
     restart: always
     env_file:
